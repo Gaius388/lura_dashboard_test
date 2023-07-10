@@ -25,3 +25,11 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.scrollbar::-webkit-scrollbar {
+  width: 0;
+  background: transparent;
+}
+.topGradient{
+  background: linear-gradient(to top right, rgba(129, 89, 212, 1), rgba(99, 0, 176, 1));
+}
