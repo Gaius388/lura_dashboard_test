@@ -17,6 +17,9 @@ module.exports = {
       backgroundImage: {
         backDrop: "url('/backDrop.svg')",
       },
+      screens: {
+        "max-screen": "1440px",
+      },
     },
   },
   plugins: [],
