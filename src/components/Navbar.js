@@ -28,20 +28,10 @@ export default function Navbar({ modal, setModal }) {
 
   return (
     <nav
-      className={`h-16  w-full fixed z-40    bg-[#1B192A] text-[#BDBDBD] md:flex items-center shadow-md overflow-hidden top-0 inset-0 
+      className={`h-16  w-full fixed z-40 top-0 inset-0    bg-[#1B192A] text-[#BDBDBD] md:flex items-center shadow-md overflow-hidden 
        max-screen:w-[1440px] max-screen:mx-auto
       sm:hidden hidden pointer-events-none `}
     >
-      {/* {language && <Language language={language} setLanguage={setLanguage} />} */}
-      {/* {account && (
-        <AccountInfo
-          setSubscription={setSubscription}
-          account={account}
-          setAccount={setAccount}
-          setCardDetails={setCardDetails}
-        />
-      )} */}
-
       <div className="flex w-full justify-between gap-8 items-center pr-8 ">
         <div className="flex gap-4 items-center pl-8">
           <Image src={luraLogo} alt="luraLogo" className="w-[5em]" />
@@ -57,7 +47,7 @@ export default function Navbar({ modal, setModal }) {
                 : "cursor-pointer pointer-events-auto"
             }`}
             onClick={() => {
-              setModal({ language: false, account: true });
+              setModal({ account: !modal.account, language: false });
             }}
           >
             Account Information
@@ -69,7 +59,8 @@ export default function Navbar({ modal, setModal }) {
                 : "cursor-pointer pointer-events-auto"
             }`}
             onClick={() => {
-              setModal({ account: false, language: true });
+              console.log("yes");
+              setModal({ language: !modal.language, account: false });
             }}
           >
             Language

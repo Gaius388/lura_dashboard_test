@@ -16,7 +16,7 @@ const Language = ({ language, setModal, modal }) => {
           as="div"
           className="relative z-30"
           initialFocus={cancelButtonRef}
-          onClose={() => setModal({ language: false })}
+          onClose={() => setModal({ language: !modal.language })}
         >
           <Transition.Child
             as={Fragment}

@@ -66,7 +66,9 @@ const AccountInfo = ({ account, setModal, modal }) => {
           >
             <div
               className="fixed inset-0 bg-[rgba(0,0,0,0.51)] backdrop-blur blur-md z-30 transition-opacity w-full cursor-pointer"
-              onClick={() => setModal({ account: false })}
+              onClick={() => {
+                setModal({ account: !modal.account });
+              }}
             />
           </Transition.Child>
 

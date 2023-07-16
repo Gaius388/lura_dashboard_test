@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import AccountInfo from "@/components/AccountInfo";
 import Language from "@/components/Language";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Issues from "@/components/Issues";
 import NotificationSettings from "@/components/NotificationSettings";
 import ConnectionSettings from "@/components/ConnectionSettings";
@@ -36,11 +36,30 @@ export default function Home() {
     vpnProtocol: false,
   });
 
+  useEffect(() => {
+    console.log(modal);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [modal]);
+
   return (
     <main className="w-full relative">
-      <div className="">
+      <div
+      // className="md:block xl:hidden"
+      // className={`${
+      //   modal.account === false ||
+      //   modal.language === false ||
+      //   modal.connectSettings === false ||
+      //   modal.connection === false ||
+      //   modal.issues === false ||
+      //   modal.notificationSettings === false ||
+      //   modal.vpnProtocol === false
+      //     ? "relative"
+      //     : "hidden"
+      // } `}
+      >
         <Navbar setModal={setModal} modal={modal} />
       </div>
+      {/* ) : null} */}
       <section className="h-max relative">
         <Layout powerOn={powerOn} setPowerOn={setPowerOn}>
           <div className="relative text-white grid  bg-black font-axiforma ">
