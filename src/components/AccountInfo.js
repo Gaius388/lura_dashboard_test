@@ -47,13 +47,18 @@ const AccountInfo = ({ account, setModal, modal }) => {
   });
 
   return (
-    <main className="relative">
-      <Transition.Root show={account} as={Fragment} className="w-max">
+    <main className="relative w-full">
+      <Transition.Root show={modal.account} as={Fragment} className="w-max">
         <Dialog
           as="div"
-          className="relative z-20"
+          // className="relative z-20"
           initialFocus={cancelButtonRef}
-          onClose={() => setModal({ account: false })}
+          // onClose={() => setModal({ account: false })}
+          onClose={() =>
+            setModal((prevState) => {
+              return { ...prevState, account: false };
+            })
+          }
         >
           <Transition.Child
             as={Fragment}
@@ -83,9 +88,11 @@ const AccountInfo = ({ account, setModal, modal }) => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="h-full min-h-screen relative w-4/6 md:w-2/6 sm:w-3/6">
+                <Dialog.Panel className="h-full min-h-screen  w-4/6 md:w-2/6 sm:w-3/6">
                   {/* <div className="fixed top-0 mx-auto inset-0  "> */}
+                  {/* {modal.account && ( */}
                   <Navbar setModal={setModal} modal={modal} />
+                  {/* )} */}
                   {/* </div> */}
                   {/* max-screen:static max-screen:w-auto */}
                   <section className="relative transform overflow-hidden   text-left shadow-xl transition-all w-full sm:my-8 sm:w-full mt-10 sm:max-w-md mx-auto">
@@ -99,7 +106,7 @@ const AccountInfo = ({ account, setModal, modal }) => {
                         className="mt-3 grid gap-4 px-4 pb-4 text-white font-medium"
                         onSubmit={handleSubmit}
                       >
-                        <section className="grid sm:grid-cols-2 gap-4">
+                        <section className="grid md:grid-cols-2 grid-cols-1 gap-4  ">
                           <div className="text-sm grid gap-2 relative">
                             <label className="text-xs">First Name</label>
                             <div

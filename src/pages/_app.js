@@ -6,6 +6,7 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       {/* <Navbar /> */}
+      {/* <Navbar modal={modal} setModal={setModal} /> */}
       <Component {...pageProps} />;
       <ToastContainer />
     </>

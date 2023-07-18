@@ -115,7 +115,7 @@ const AddCard = ({ addCard, setModal, modal }) => {
                           className="mt-3 grid gap-4 px-4 pb-4 text-white font-medium"
                           onSubmit={handleSubmit}
                         >
-                          <section className="grid sm:grid-cols-2 gap-4">
+                          <section className="grid md:grid-cols-2 grid-cols-1 gap-4">
                             <div className="text-sm grid gap-2 relative">
                               <label className="text-xs">First Name</label>
                               <div
@@ -201,7 +201,7 @@ const AddCard = ({ addCard, setModal, modal }) => {
                               />
                             </div>
                           </div>
-                          <section className="grid sm:grid-cols-2 gap-4">
+                          <section className="grid md:grid-cols-2 grid-cols-1 gap-4">
                             <div className="text-sm grid gap-2 relative">
                               <label className="text-xs">Expiration Date</label>
                               <div

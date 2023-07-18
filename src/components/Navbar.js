@@ -2,35 +2,13 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { BiUser } from "react-icons/bi";
 import luraLogo from "../../public/LURa.svg";
-import AccountInfo from "./AccountInfo";
-import Language from "./Language";
-import ConnectionLog from "./ConnectionLog";
-import VpnProtocol from "./VpnProtocol";
-import ConnectionSettings from "./ConnectionSettings";
-import NotificationSettings from "./NotificationSettings";
-import Issues from "./Issues";
-import Subscription from "./Subscription";
-import CardDetails from "./CardDetails";
-import AddCard from "./AddCard";
 
 export default function Navbar({ modal, setModal }) {
-  // const [account, setAccount] = useState(false);
-  // const [language, setLanguage] = useState(false);
-  // const [connection, setConnection] = useState(false);
-  // const [subscription, setSubscription] = useState(false);
-  // const [cardDetails, setCardDetails] = useState(false);
-  const [addCard, setAddCard] = useState(false);
-  const [connectSettings, setConnectSettings] = useState(false);
-  const [notificationSettings, setNotificationSettings] = useState(false);
-  const [vpnProtocol, setVpnProtocol] = useState(false);
-  const [issues, setIssues] = useState(false);
-  const [active, setActive] = useState("");
-
   return (
     <nav
-      className={`h-16  w-full fixed z-40 top-0 inset-0    bg-[#1B192A] text-[#BDBDBD] md:flex items-center shadow-md overflow-hidden 
+      className={`h-16  w-full fixed z-50 top-0 inset-0    bg-[#1B192A] text-[#BDBDBD] md:flex items-center shadow-md overflow-hidden 
        max-screen:w-[1440px] max-screen:mx-auto
-      sm:hidden hidden pointer-events-none `}
+      sm:hidden hidden pointer-events-none left-0  `}
     >
       <div className="flex w-full justify-between gap-8 items-center pr-8 ">
         <div className="flex gap-4 items-center pl-8">
@@ -47,7 +25,18 @@ export default function Navbar({ modal, setModal }) {
                 : "cursor-pointer pointer-events-auto"
             }`}
             onClick={() => {
-              setModal({ account: !modal.account, language: false });
+              setModal({
+                account: !modal.account,
+                language: false,
+                connection: false,
+                connectSettings: false,
+                issues: false,
+                subscription: false,
+                cardDetails: false,
+                addCard: false,
+                notificationSettings: false,
+                vpnProtocol: false,
+              });
             }}
           >
             Account Information
@@ -55,12 +44,22 @@ export default function Navbar({ modal, setModal }) {
           <button
             className={`${
               modal.language === true
-                ? "text-[#AB55EF] cursor-pointer pointer-events-auto"
-                : "cursor-pointer pointer-events-auto"
+                ? "text-[#AB55EF] cursor-pointer pointer-events-auto focus-visible:outline-none  "
+                : "cursor-pointer pointer-events-auto focus-visible:outline-none  "
             }`}
             onClick={() => {
-              console.log("yes");
-              setModal({ language: !modal.language, account: false });
+              setModal({
+                language: !modal.language,
+                account: false,
+                connection: false,
+                connectSettings: false,
+                issues: false,
+                subscription: false,
+                cardDetails: false,
+                addCard: false,
+                notificationSettings: false,
+                vpnProtocol: false,
+              });
             }}
           >
             Language
@@ -72,7 +71,18 @@ export default function Navbar({ modal, setModal }) {
                 : "cursor-pointer pointer-events-auto"
             }`}
             onClick={() => {
-              setModal({ connection: true });
+              setModal({
+                connection: !modal.connection,
+                account: false,
+                language: false,
+                connectSettings: false,
+                issues: false,
+                subscription: false,
+                cardDetails: false,
+                addCard: false,
+                notificationSettings: false,
+                vpnProtocol: false,
+              });
             }}
           >
             Connection Log
@@ -84,7 +94,18 @@ export default function Navbar({ modal, setModal }) {
                 : "cursor-pointer pointer-events-auto"
             }`}
             onClick={() => {
-              setModal({ connectSettings: true });
+              setModal({
+                connectSettings: !modal.connectSettings,
+                account: false,
+                language: false,
+                connection: false,
+                issues: false,
+                subscription: false,
+                cardDetails: false,
+                addCard: false,
+                notificationSettings: false,
+                vpnProtocol: false,
+              });
             }}
           >
             Connection Settings
@@ -96,7 +117,18 @@ export default function Navbar({ modal, setModal }) {
                 : "cursor-pointer pointer-events-auto"
             }`}
             onClick={() => {
-              setModal({ vpnProtocol: true });
+              setModal({
+                vpnProtocol: !modal.vpnProtocol,
+                account: false,
+                language: false,
+                connection: false,
+                connectSettings: false,
+                issues: false,
+                subscription: false,
+                cardDetails: false,
+                addCard: false,
+                notificationSettings: false,
+              });
             }}
           >
             VPN Protocol
@@ -108,7 +140,18 @@ export default function Navbar({ modal, setModal }) {
                 : "cursor-pointer pointer-events-auto"
             }`}
             onClick={() => {
-              setModal({ notificationSettings: true });
+              setModal({
+                notificationSettings: !modal.notificationSettings,
+                account: false,
+                language: false,
+                connection: false,
+                connectSettings: false,
+                issues: false,
+                subscription: false,
+                cardDetails: false,
+                addCard: false,
+                vpnProtocol: false,
+              });
             }}
           >
             Notification Settings
@@ -120,7 +163,18 @@ export default function Navbar({ modal, setModal }) {
                 : "cursor-pointer pointer-events-auto"
             }`}
             onClick={() => {
-              setModal({ issues: true });
+              setModal({
+                issues: !modal.issues,
+                account: false,
+                language: false,
+                connection: false,
+                connectSettings: false,
+                subscription: false,
+                cardDetails: false,
+                addCard: false,
+                notificationSettings: false,
+                vpnProtocol: false,
+              });
             }}
           >
             Report an issue

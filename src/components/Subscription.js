@@ -43,7 +43,7 @@ const Subscription = ({ subscription, setModal, modal }) => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="h-full min-h-screen relative w-11/12 ">
+                <Dialog.Panel className="h-full min-h-screen relative md:w-5/6 w-10/12 ">
                   <Navbar setModal={setModal} modal={modal} />
 
                   <section className="relative transform overflow-hidden rounded-xl text-left shadow-xl transition-all w-full sm:my-8 mt-10  ">
@@ -159,25 +159,33 @@ const Subscription = ({ subscription, setModal, modal }) => {
                           </div>
                         </div>
                       </article>
-                      <div className="flex justify-between text-center md:gap-20 w-full gap-0  p-5">
+                      <div className="flex justify-between text-center  w-full gap-6  p-5">
                         <p className="text-[#BDBDBD] text-base w-1/4"></p>
 
-                        <button
-                          className="flex bg-[#5D18EB] justify-center
-                        rounded-md items-center p-2  w-1/4"
-                        >
-                          Buy Now
-                        </button>
-                        <button
-                          className="flex bg-[#5D18EB] 
-                        rounded-md
-                        justify-center items-center p-2 px-4 w-1/4"
-                        >
-                          Buy Now
-                        </button>
-                        <button className="flex bg-[#5D18EB] rounded-md justify-center items-center p-2 px-4 w-1/4">
-                          Buy Now
-                        </button>
+                        <div className="flex items-center justify-center w-1/4">
+                          <button
+                            className="flex bg-[#5D18EB] justify-center
+                        rounded-md items-center md:px-6 md:p-3   p-2  w-fit"
+                          >
+                            Buy Now
+                          </button>
+                        </div>
+                        <div className="flex items-center justify-center w-1/4">
+                          <button
+                            className="flex bg-[#5D18EB] justify-center
+                        rounded-md items-center md:px-6 md:p-3   p-2  w-fit"
+                          >
+                            Buy Now
+                          </button>
+                        </div>
+                        <div className="flex items-center justify-center w-1/4">
+                          <button
+                            className="flex bg-[#5D18EB] justify-center
+                        rounded-md md:px-6 md:p-3  items-center p-2  w-fit"
+                          >
+                            Buy Now
+                          </button>
+                        </div>
                       </div>
                     </section>
                   </section>
