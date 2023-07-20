@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function TestSvg() {
+export default function TestSvg({ powerOn, country }) {
   return (
     <svg
       width="937"

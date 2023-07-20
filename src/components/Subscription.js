@@ -2,9 +2,11 @@ import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition, Disclosure } from "@headlessui/react";
 import { GrFormClose } from "react-icons/gr";
 import { IoCloseOutline } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
 import React from "react";
 import { BsArrowLeftShort, BsCheck } from "react-icons/bs";
 import Navbar from "./Navbar";
+import { AiOutlineCheck } from "react-icons/ai";
 
 const Subscription = ({ subscription, setModal, modal }) => {
   const cancelButtonRef = useRef(null);
@@ -47,7 +49,7 @@ const Subscription = ({ subscription, setModal, modal }) => {
                   <Navbar setModal={setModal} modal={modal} />
 
                   <section className="relative transform overflow-hidden rounded-xl text-left shadow-xl transition-all w-full sm:my-8 mt-10  ">
-                    <section className="bg-[#1B192B] rounded-lg capitalize text-white flex flex-col w-full p-14 gap-6">
+                    <section className="bg-[#1B192B] hidden  rounded-lg capitalize text-white md:flex flex-col w-full p-14 gap-6">
                       <header className="flex justify-between text-center gap-6 w-full">
                         <div
                           className="text-[#BDBDBD] text-base w-1/4 flex items-center justify-center gap-1 cursor-pointer"
@@ -188,6 +190,227 @@ const Subscription = ({ subscription, setModal, modal }) => {
                         </div>
                       </div>
                     </section>
+                    <div className="md:hidden block bg-backCube bg-left-top bg-no-repeat border border-black">
+                      <div className="bg-backCone bg-center sm:bg-[right_7rem] bg-no-repeat">
+                        <div className="bg-backSpec bg-right-bottom bg-no-repeat">
+                          <div className="grid gap-6">
+                            <div className="md:mx-12 rounded-[19px] bg-[#191919] bg-opacity-80 grid font-axiforma py-10 px-6 max-[290px]:px-3 text-center mt-16 mx-6 md:hidden">
+                              <div
+                                className="text-[#BDBDBD] text-base w-full pb-5 flex items-center justify-center gap-1 cursor-pointer"
+                                onClick={() => {
+                                  setModal({
+                                    account: true,
+                                    subscription: false,
+                                  });
+                                }}
+                              >
+                                <BsArrowLeftShort className="text-xl " />
+                                <p> Account Information</p>
+                              </div>
+                              <div className="text-[16px] font-medium text-[#4F5665]">
+                                3-Day Trial
+                              </div>
+                              <div className="text-3xl text-[#BDBDBD] font-medium mt-6 mb-10">
+                                Free
+                              </div>
+                              <div className="grid gap-6 text-[#BDBDBD] w-full">
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Unlimited Bandwidth
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Encrypted Connection
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Traffic Logs
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#EB1818]">
+                                    <IoMdClose />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Works on All Devices
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Connect Anywhere
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#EB1818]">
+                                    <IoMdClose />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Access to All Features
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#EB1818]">
+                                    <IoMdClose />
+                                  </div>
+                                </div>
+                                <div
+                                  href={"/signUpPay"}
+                                  className="px-12 py-3 mx-auto text-sm rounded-md bg-[#5D18EB]"
+                                >
+                                  Buy Now
+                                </div>
+                              </div>
+                            </div>
+                            <div className="md:mx-12 rounded-[19px] bg-[#191919] bg-opacity-80 grid font-axiforma py-10 px-6 max-[290px]:px-3 text-center mx-6 md:hidden">
+                              <div className="text-[16px] font-medium text-[#4F5665]">
+                                Monthly Subscription
+                              </div>
+                              <div className="text-3xl text-[#BDBDBD] font-medium mt-6 mb-10">
+                                $7.99
+                              </div>
+                              <div className="grid text-[#BDBDBD] gap-6 w-full">
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Unlimited Bandwidth
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Encrypted Connection
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Traffic Logs
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Works on All Devices
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Connect Anywhere
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Access to All Features
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="px-12 py-3 mx-auto text-sm rounded-md bg-[#5D18EB]">
+                                  Buy Now
+                                </div>
+                              </div>
+                            </div>
+                            <div className="md:mx-12 rounded-[19px] bg-[#191919] bg-opacity-80 grid font-axiforma py-10 px-6 max-[290px]:px-3 text-center mb-28 mx-6 md:hidden">
+                              <div className="text-[16px] font-medium text-[#4F5665]">
+                                Yearly Subscription
+                              </div>
+                              <div className="text-3xl text-[#BDBDBD] font-medium mt-6 mb-10">
+                                $59.99
+                              </div>
+                              <div className="grid text-[#BDBDBD] gap-6 w-full">
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Unlimited Bandwidth
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Encrypted Connection
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Traffic Logs
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Works on All Devices
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Connect Anywhere
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="h-[0.3px] bg-[#4F5665] w-full"></div>
+                                <div className="flex items-center justify-between">
+                                  <div className="sm:text-lg text-sm text-left">
+                                    Access to All Features
+                                  </div>
+                                  <div className="p-2 text-3s text-white rounded-full border-2 border-[#5D18EB]">
+                                    <AiOutlineCheck />
+                                  </div>
+                                </div>
+                                <div className="px-12 py-3 mx-auto text-sm rounded-md bg-[#5D18EB]">
+                                  Buy Now
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </section>
                 </Dialog.Panel>
               </Transition.Child>
