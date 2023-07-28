@@ -11,7 +11,7 @@ import nigeria from "../../public/nigeriaFlag.png";
 import panama from "../../public/panamaFlag.png";
 import crown from "../../public/crown.svg";
 
-export default function Aside({ powerOn, setPowerOn }) {
+export default function Aside({ powerOn, setPowerOn, setCountry }) {
   const [activeMenu, setActiveMenu] = useState(false);
 
   return (
@@ -56,7 +56,10 @@ export default function Aside({ powerOn, setPowerOn }) {
         <div className="text-white px-4 font-medium mb-4 grid gap-y-6">
           <h2 className="text-sm">Free Locations (2)</h2>
           <div className="flex justify-between items-center text-sm pl-2">
-            <div className="flex items-center gap-4">
+            <div
+              className="flex items-center gap-4 cursor-pointer"
+              onClick={() => setCountry("United States of America")}
+            >
               <div>
                 <Image src={usa} alt="usaFlag" />
               </div>
@@ -75,7 +78,10 @@ export default function Aside({ powerOn, setPowerOn }) {
             </div>
           </div>
           <div className="flex justify-between items-center text-sm pl-2">
-            <div className="flex items-center gap-4">
+            <div
+              className="flex items-center gap-4 cursor-pointer"
+              onClick={() => setCountry("Sweden")}
+            >
               <div>
                 <Image src={sweden} alt="swedenFlag" />
               </div>
@@ -98,7 +104,10 @@ export default function Aside({ powerOn, setPowerOn }) {
             <Image src={crown} alt="crown" className="w-3" />
           </div>
           <div className="flex justify-between items-center text-sm pl-2">
-            <div className="flex items-center gap-4">
+            <div
+              className="flex items-center gap-4 cursor-pointer"
+              onClick={() => setCountry("Ghana")}
+            >
               <div>
                 <Image src={ghana} alt="ghanaFlag" />
               </div>
@@ -112,7 +121,10 @@ export default function Aside({ powerOn, setPowerOn }) {
             </div>
           </div>
           <div className="flex justify-between items-center text-sm pl-2">
-            <div className="flex items-center gap-4">
+            <div
+              className="flex items-center gap-4 cursor-pointer"
+              onClick={() => setCountry("Nigeria")}
+            >
               <div>
                 <Image src={nigeria} alt="nigeriaFlag" />
               </div>
@@ -126,7 +138,10 @@ export default function Aside({ powerOn, setPowerOn }) {
             </div>
           </div>
           <div className="flex justify-between items-center text-sm pl-2">
-            <div className="flex items-center gap-4">
+            <div
+              className="flex items-center gap-4 cursor-pointer"
+              onClick={() => setCountry("Panama")}
+            >
               <div>
                 <Image src={panama} alt="panamaFlag" />
               </div>

@@ -18,13 +18,19 @@ import Subscription from "@/components/Subscription";
 import CardDetails from "@/components/CardDetails";
 import AddCard from "@/components/AddCard";
 import ConnectionLog from "@/components/ConnectionLog";
+import dynamic from "next/dynamic";
 import Demo from "@/components/Void";
 import Void from "@/components/Void";
+// import MyMap from "@/components/MyMap";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [powerOn, setPowerOn] = useState(false);
+  const [country, setCountry] = useState("United States of America");
+  const MyMap = dynamic(() => import("../components/MyMap"), {
+    ssr: false,
+  });
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const openModal = () => {
@@ -76,7 +82,11 @@ export default function Home() {
       {/* <Demo modal={msodal} setModal={setModal} /> */}
       <section className="h-max ">
         <Navbar modal={modal} setModal={setModal} />
-        <Layout powerOn={powerOn} setPowerOn={setPowerOn}>
+        <Layout
+          powerOn={powerOn}
+          setCountry={setCountry}
+          setPowerOn={setPowerOn}
+        >
           <div className=" text-white grid  bg-black font-axiforma ">
             {/* <button
               className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
@@ -84,12 +94,8 @@ export default function Home() {
             >
               Open Modal
             </button> */}
-            <div className="p-5 px-8">
-              {powerOn ? (
-                <Image src={mapOn} priority alt="map" />
-              ) : (
-                <Image src={mapOff} priority alt="map" />
-              )}
+            <div className="">
+              <MyMap country={country} power={powerOn} />
             </div>
             <Footer powerOn={powerOn} setPowerOn={setPowerOn} />
           </div>

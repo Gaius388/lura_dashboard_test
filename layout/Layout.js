@@ -5,7 +5,6 @@ import { BiUser, BiSearchAlt2 } from "react-icons/bi";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import luraLogo from "../public/LURa.svg";
-// import powerOff from "../public/powerOff.svg";
 import PowerOff from "../public/powerOff.png";
 import PowerOn from "../public/powerOn.png";
 
@@ -26,7 +25,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Aside from "@/components/Aside";
 
-const Layout = ({ children, powerOn, setPowerOn }) => {
+const Layout = ({ children, powerOn, setPowerOn, setCountry }) => {
   const [activeMenu, setActiveMenu] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
 
@@ -49,7 +48,11 @@ const Layout = ({ children, powerOn, setPowerOn }) => {
       )}
 
       <div>
-        <Aside powerOn={powerOn} setPowerOn={setPowerOn} />
+        <Aside
+          powerOn={powerOn}
+          setPowerOn={setPowerOn}
+          setCountry={setCountry}
+        />
       </div>
       <div className="ml-0 duration-300 linear w-full h-full min-h-screen  bg-black object-cover bg-cover">
         {/* <Navbar /> */}

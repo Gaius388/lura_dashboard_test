@@ -1,0 +1,24 @@
+.invalid:before {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  left: 50%;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #ab55ef;
+  bottom: -6px;
+  transform: translate(-50%, -50%);
+}
+.invalidOn:before {
+  position: absolute;
+  content: "";
+  height: 0;
+  width: 0;
+  left: 50%;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-top: 7px solid #1591d7;
+  bottom: -6px;
+  transform: translate(-50%, -50%);
+}
