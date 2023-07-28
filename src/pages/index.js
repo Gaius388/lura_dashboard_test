@@ -1,10 +1,6 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import Layout from "../../layout/Layout";
-// import Image from "next/image";
-// import map from "../../public/Map.png";
-import mapOn from "../../public/MapOn.svg";
-import mapOff from "../../public/MapOff.svg";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import AccountInfo from "@/components/AccountInfo";
@@ -19,9 +15,7 @@ import CardDetails from "@/components/CardDetails";
 import AddCard from "@/components/AddCard";
 import ConnectionLog from "@/components/ConnectionLog";
 import dynamic from "next/dynamic";
-import Demo from "@/components/Void";
 import Void from "@/components/Void";
-// import MyMap from "@/components/MyMap";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -54,32 +48,9 @@ export default function Home() {
     notificationSettings: false,
     vpnProtocol: false,
   });
-  const handleLoad = async () => {
-    // setModal({});
-    if (modal.account === true) {
-      setModal({ account: false });
-    } else {
-      setModal({ account: true });
-    }
-  };
-
-  useEffect(() => {
-    // handleLoad();
-    // setModal({ account: false });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   return (
     <main className="w-full relative">
-      {/* <div className=" w-full relative  top-56 mt-20">
-        <AccountInfo
-          account={modal.account}
-          modal={modal}
-          setModal={setModal}
-        />
-      </div> */}
-      {/* <AccountInfo account={modal.account} modal={modal} setModal={setModal} /> */}
-      {/* <Demo modal={msodal} setModal={setModal} /> */}
       <section className="h-max ">
         <Navbar modal={modal} setModal={setModal} />
         <Layout
@@ -88,13 +59,7 @@ export default function Home() {
           setPowerOn={setPowerOn}
         >
           <div className=" text-white grid  bg-black font-axiforma ">
-            {/* <button
-              className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-              onClick={openModal}
-            >
-              Open Modal
-            </button> */}
-            <div className="">
+            <div className="md:px-0 px-2 ">
               <MyMap country={country} power={powerOn} />
             </div>
             <Footer powerOn={powerOn} setPowerOn={setPowerOn} />
