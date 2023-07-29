@@ -16,11 +16,13 @@ import AddCard from "@/components/AddCard";
 import ConnectionLog from "@/components/ConnectionLog";
 import dynamic from "next/dynamic";
 import Void from "@/components/Void";
+import Loading from "@/components/Loading";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const [powerOn, setPowerOn] = useState(false);
+  const [load, setLoad] = useState(true);
   const [country, setCountry] = useState("United States of America");
   const MyMap = dynamic(() => import("../components/MyMap"), {
     ssr: false,
@@ -59,8 +61,13 @@ export default function Home() {
           setPowerOn={setPowerOn}
         >
           <div className=" text-white grid  bg-black font-axiforma ">
-            <div className="md:px-0 px-2 ">
-              <MyMap country={country} power={powerOn} />
+            <div className="md:px-0 px-2 h-[500px]">
+              {load && (
+                <div className="h-full pt-30">
+                  <Loading />
+                </div>
+              )}
+              <MyMap country={country} power={powerOn} setLoad={setLoad} />
             </div>
             <Footer powerOn={powerOn} setPowerOn={setPowerOn} />
           </div>

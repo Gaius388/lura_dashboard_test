@@ -5,12 +5,13 @@ import { MapContainer, GeoJSON, Marker, Tooltip, useMap } from "react-leaflet";
 import styled from "styled-components";
 import "leaflet/dist/leaflet.css";
 
-export default function MyMap({ power, country }) {
+export default function MyMap({ power, country, setLoad }) {
   const [positions, setPositions] = useState({
-    latitude: 132.4489,
-    longitude: 42.8454,
+    latitude: -124.0601,
+    longitude: 50.1378,
   });
 
+  // [50.1378, -124.0601]
   const OncountryStyle = (feature) => {
     return {
       fillColor: feature.properties.ADMIN === country ? "#1591D7" : "#262F52",
@@ -41,22 +42,39 @@ export default function MyMap({ power, country }) {
     }
   `;
 
+  //find coordinates of country
   const findPosition = (country) => {
-    const countryObject = dataMap.features.find(
-      (countryNames) => countryNames.properties.ADMIN === country
-    );
-    if (countryObject) {
-      console.log(countryObject);
-      const coordinates = countryObject.geometry.coordinates[0];
-      const position = coordinates.map(([longitude, latitude]) => ({
-        latitude,
-        longitude,
-      }));
-      const longitude = position[0]?.longitude[1];
-      const latitude = position[0]?.latitude[0];
-      console.log(coordinates);
-      setPositions({ longitude, latitude });
+    if (country === "United States of America") {
+      setPositions({ longitude: 50.1378, latitude: -124.0601 });
+    } else {
+      const countryObject = dataMap.features.find(
+        (countryNames) => countryNames.properties.ADMIN === country
+      );
+      if (countryObject) {
+        console.log(countryObject);
+        let coordinates;
+        if (countryObject.geometry.coordinates.length > 1) {
+          coordinates = countryObject.geometry.coordinates[0];
+        } else {
+          coordinates = countryObject.geometry.coordinates;
+        }
+        const position = coordinates.map(([longitude, latitude]) => ({
+          latitude,
+          longitude,
+        }));
+
+        const relongitude = position[0]?.longitude[1];
+        const relatitude = position[0]?.latitude[0];
+        const longitude = relongitude + 5;
+        const latitude = relatitude - 5;
+        // console.log(coordinates);
+        // console.log(position);
+        // console.log(relatitude, relongitude);
+        // console.log(latitude, longitude);
+        setPositions({ longitude, latitude });
+      }
     }
+    setLoad(false);
   };
 
   const onEachCountry = (country, layer) => {
@@ -103,6 +121,7 @@ export default function MyMap({ power, country }) {
           {positions.latitude && positions.longitude && (
             <Marker
               opacity={0}
+              // position={[50.1378, -124.0601]}
               position={[positions.longitude, positions.latitude]}
             >
               <StyledPop direction="top" offset={[0, 20]} opacity={1} permanent>
