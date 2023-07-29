@@ -18,8 +18,6 @@ import dynamic from "next/dynamic";
 import Void from "@/components/Void";
 import Loading from "@/components/Loading";
 
-const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
   const [powerOn, setPowerOn] = useState(false);
   const [load, setLoad] = useState(true);

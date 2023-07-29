@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect, useState } from "react";
 import dataMap from "../../data/countries.json";
 import { MapContainer, GeoJSON, Marker, Tooltip, useMap } from "react-leaflet";
