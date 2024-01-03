@@ -1,10 +1,15 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import dataMap from "../../data/countries.json";
 import { MapContainer, GeoJSON, Marker, Tooltip, useMap } from "react-leaflet";
 import styled from "styled-components";
 import "leaflet/dist/leaflet.css";
+import { useStore } from "@/store";
 
-export default function MyMap({ power, country, setLoad }) {
+export default function MyMap({ setLoad }) {
+  const country = useStore((state) => state.country);
+  const power = useStore((state) => state.power);
+  // const [load, setLoad] = useState(true);
   const [positions, setPositions] = useState({
     latitude: -124.0601,
     longitude: 50.1378,

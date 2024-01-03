@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React from "react";
 import timerIcon from "../../public/timer_icon.svg";
@@ -8,8 +9,11 @@ import receivedMask from "../../public/received_mask.svg";
 import receivedWave from "../../public/received_wave.svg";
 import sentMask from "../../public/sent_mask.svg";
 import sentWave from "../../public/sent_wave.svg";
+import { useStore } from "@/store";
 
-export default function Footer({ powerOn, setPowerOn }) {
+export default function Footer() {
+  const power = useStore((state) => state.power);
+
   return (
     <div className="md:grid grid-cols-3 gap-6 md:self-end flex flex-col p-4">
       <div className=" rounded-md   bg-gradient-to-t from-black to-gray-800 shadow-right-purple h-48">
@@ -20,7 +24,7 @@ export default function Footer({ powerOn, setPowerOn }) {
               time running
             </p>
             <p className="text-lg font-bold">
-              {powerOn ? "3 Days 14 Hrs 32 Mins " : "-------"}
+              {power ? "3 Days 14 Hrs 32 Mins " : "-------"}
             </p>
           </div>
         </div>
@@ -30,7 +34,7 @@ export default function Footer({ powerOn, setPowerOn }) {
             <p className="uppercase bg-gradient-to-r bg-clip-text from-[#BB6BD9] to-[#F27A54] text-xs text-transparent font-bold">
               ads blocked
             </p>
-            <p className="text-lg font-bold">{powerOn ? "5,671" : "-------"}</p>
+            <p className="text-lg font-bold">{power ? "5,671" : "-------"}</p>
           </div>
         </div>
       </div>
@@ -43,7 +47,7 @@ export default function Footer({ powerOn, setPowerOn }) {
               data received
             </p>
             <p className="text-lg font-bold">
-              {powerOn ? "37.72 GB" : "-------"}
+              {power ? "37.72 GB" : "-------"}
             </p>
           </div>
         </div>
@@ -63,7 +67,7 @@ export default function Footer({ powerOn, setPowerOn }) {
           <div>
             <p className="uppercase text-[#EF8C55] text-xs">Data sent</p>
             <p className="text-lg font-bold">
-              {powerOn ? "37.72 GB" : "-------"}
+              {power ? "37.72 GB" : "-------"}
             </p>
           </div>
         </div>

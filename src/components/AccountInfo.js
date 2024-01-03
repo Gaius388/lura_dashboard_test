@@ -1,3 +1,4 @@
+"use client"
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { AiOutlineClose } from "react-icons/ai";
@@ -88,7 +89,7 @@ const AccountInfo = ({ account, setModal, modal }) => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="h-full min-h-screen  w-4/6 md:w-2/6 sm:w-3/6">
+                <Dialog.Panel className="h-full min-h-screen  w-4/6 md:w-2/6 xl:w-[30rem] sm:w-3/6">
                   {/* <div className="fixed top-0 mx-auto inset-0  "> */}
                   {/* {modal.account && ( */}
                   <Navbar setModal={setModal} modal={modal} />

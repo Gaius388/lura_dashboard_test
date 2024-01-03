@@ -1,3 +1,4 @@
+"use client";
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition, Disclosure } from "@headlessui/react";
 import { AiOutlineInfoCircle } from "react-icons/ai";
@@ -60,7 +61,7 @@ const ConnectionLog = ({ connection, setModal, modal }) => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="h-full min-h-screen relative w-4/6 md:w-2/6 ">
+                <Dialog.Panel className="h-full min-h-screen relative w-4/6 md:w-2/6 xl:w-[30rem] ">
                   <Navbar setModal={setModal} modal={modal} />
                   <section className="relative transform overflow-hidden  text-left shadow-xl transition-all mt-10 w-full mx-auto sm:my-8 sm:w-full ">
                     <div className="bg-[#1B192B] rounded-lg capitalize text-white flex flex-col">

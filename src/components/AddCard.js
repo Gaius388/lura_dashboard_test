@@ -1,3 +1,4 @@
+"use client";
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { RiCheckboxBlankCircleLine } from "react-icons/ri";
@@ -94,7 +95,7 @@ const AddCard = ({ addCard, setModal, modal }) => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="h-full min-h-screen relative w-4/6 md:w-2/6 sm:w-3/6">
+                <Dialog.Panel className="h-full min-h-screen relative w-4/6 md:w-2/6 xl:w-[30rem] sm:w-3/6">
                   <Navbar setModal={setModal} modal={modal} />
 
                   <section className="mt-10 relative transform overflow-hidden rounded-lg  text-left shadow-xl transition-all  sm:my-8 sm:w-full w-full">

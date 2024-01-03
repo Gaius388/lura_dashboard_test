@@ -1,3 +1,4 @@
+"use client";
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import React from "react";
@@ -89,7 +90,7 @@ const Issues = ({ issues, setModal, modal }) => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="h-full min-h-screen relative w-5/6 md:w-2/6 ">
+                <Dialog.Panel className="h-full min-h-screen relative w-5/6 md:w-2/6 xl:w-[32rem]">
                   <Navbar setModal={setModal} modal={modal} />
 
                   <section className="relative transform overflow-hidden   text-left transition-all w-full mx-auto sm:my-8 sm:w-full mt-10 ">

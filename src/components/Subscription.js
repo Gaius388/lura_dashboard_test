@@ -1,3 +1,4 @@
+"use client";
 import { Fragment, useRef, useState } from "react";
 import { Dialog, Transition, Disclosure } from "@headlessui/react";
 import { GrFormClose } from "react-icons/gr";
@@ -45,7 +46,7 @@ const Subscription = ({ subscription, setModal, modal }) => {
                 leaveFrom="opacity-100 translate-y-0 sm:scale-100"
                 leaveTo="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               >
-                <Dialog.Panel className="h-full min-h-screen relative md:w-5/6 w-10/12 ">
+                <Dialog.Panel className="h-full min-h-screen relative md:w-5/6 w-10/12 xl:w-[60rem]">
                   <Navbar setModal={setModal} modal={modal} />
 
                   <section className="relative transform overflow-hidden rounded-xl text-left shadow-xl transition-all w-full sm:my-8 mt-10  ">

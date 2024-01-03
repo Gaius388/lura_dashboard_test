@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import { BsBarChartFill, BsChevronDown } from "react-icons/bs";
 import { BiUser, BiSearchAlt2 } from "react-icons/bi";
@@ -10,8 +11,13 @@ import ghana from "../../public/ghanaFlag.png";
 import nigeria from "../../public/nigeriaFlag.png";
 import panama from "../../public/panamaFlag.png";
 import crown from "../../public/crown.svg";
+import { useStore } from "@/store";
 
-export default function Aside({ powerOn, setPowerOn, setCountry }) {
+export default function Aside() {
+  const setCountry = useStore((state) => state.setCountry);
+  const power = useStore((state) => state.power);
+  const setPower = useStore((state) => state.setPower);
+
   const [activeMenu, setActiveMenu] = useState(false);
 
   return (
@@ -24,19 +30,19 @@ export default function Aside({ powerOn, setPowerOn, setCountry }) {
         <div className="mb-4 pt-12 text-2xl px-6 items-center text-[#526484] grid justify-center gap-4">
           {/* href={"/overview"} */}
           <div>
-            {powerOn ? (
+            {power ? (
               <Image
-                onClick={() => setPowerOn(!powerOn)}
+                onClick={() => setPower()}
                 src={PowerOn}
                 alt="powerOff"
-                className="my-auto w-3/4 mx-auto"
+                className="my-auto w-3/4 mx-auto cursor-pointer"
               />
             ) : (
               <Image
-                onClick={() => setPowerOn(!powerOn)}
+                onClick={() => setPower()}
                 src={PowerOff}
                 alt="powerOff"
-                className="my-auto w-3/4 mx-auto"
+                className="my-auto w-3/4 mx-auto cursor-pointer"
               />
             )}
           </div>
